@@ -1,0 +1,474 @@
+/* --- Base Container & Inputs --- */
+#wandr-quiz-container {
+    width: 100%;
+    max-width: 72rem;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
+    padding: 2.5rem;
+    box-sizing: border-box;
+    margin: 2rem auto;
+    font-family: inherit;
+}
+
+#wandr-quiz-container select,
+#wandr-quiz-container input[type="number"],
+#wandr-quiz-container input[type="text"],
+#wandr-quiz-container input[type="email"],
+#wandr-quiz-container input[type="tel"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    background-color: #f9fafb;
+    font-size: 1rem;
+    color: #111827;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quantity-selector button {
+    background-color: #e5e7eb;
+    border: 1px solid #d1d5db;
+    color: #4b5563;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.quantity-selector button:hover {
+    background-color: #d1d5db;
+}
+
+.flex-container-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#wandr-quiz-container select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23374151' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+}
+
+#wandr-quiz-container select:focus,
+#wandr-quiz-container input[type="number"]:focus,
+#wandr-quiz-container input[type="text"]:focus,
+#wandr-quiz-container input[type="email"]:focus,
+#wandr-quiz-container input[type="tel"]:focus {
+    outline: none;
+    border-color: #3876d2;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+#wandr-quiz-container, #wandr-quiz-container div, #wandr-quiz-container p, #wandr-quiz-container button, #wandr-quiz-container a, #wandr-quiz-container h2, #wandr-quiz-container h3, #wandr-quiz-container strong, #wandr-quiz-container ul, #wandr-quiz-container li, #wandr-quiz-container select, #wandr-quiz-container input { font: inherit; vertical-align: baseline; }
+#wandr-quiz-container * { box-sizing: border-box; margin: 0; padding: 0; border: 0; }
+#wandr-quiz-container h2 { font-size: 1.5rem; line-height: 2rem; font-weight: 600; text-align: center; }
+#wandr-quiz-container h3 { font-size: 1.125rem; line-height: 1.75rem; font-weight: 500; }
+#wandr-quiz-container strong { font-weight: 600; }
+#wandr-quiz-container .font-semibold { font-weight: 500; }
+#wandr-quiz-container .text-center { text-align: center; }
+#wandr-quiz-container .text-gray-600 { color: #4b5563; }
+#wandr-quiz-container .text-blue-600 { color: #3876d2; }
+#wandr-quiz-container .text-white { color: #ffffff; }
+#wandr-quiz-container .mt-2 { margin-top: 0.25rem; }
+#wandr-quiz-container .mt-3 { margin-top: 1.5rem; }
+#wandr-quiz-container .mt-4 { margin-top: 1rem; }
+#wandr-quiz-container .mt-8 { margin-top: 1.75rem; }
+#wandr-quiz-container .bg-blue-600 { background-color: #3876d2; }
+#wandr-quiz-container .bg-gray-200 { background-color: #e5e7eb; }
+#wandr-quiz-container .rounded-lg { border-radius: 0.5rem; }
+#wandr-quiz-container .flex { display: flex; }
+#wandr-quiz-container .justify-between { justify-content: space-between; }
+#wandr-quiz-container .items-center { align-items: center; }
+#wandr-quiz-container .gap-4 { gap: 1rem; }
+#wandr-quiz-container .flex-wrap { flex-wrap: wrap; }
+#wandr-quiz-container .bg-gray-50 { background-color: #f9fafb; }
+#wandr-quiz-container .border-dashed { border: 1px dashed #d1d5db; }
+
+/* Reduce boldness of Destination and Trip duration */
+#page-2 .quiz-form-section h3 {
+    font-weight: 500 !important;
+}
+
+/* --- Page 4 Layout --- */
+.last-page-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+@media (min-width: 768px) {
+    .last-page-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    #price-summary-column {
+        padding-left: 2rem;
+    }
+    #meds-list-column {
+        padding-right: 2rem;
+    }
+    .full-width {
+        grid-column: 1 / -1; 
+        padding: 0 10% !important; 
+    }
+}
+
+#country-info-wrapper {
+    margin-bottom: 1.5rem; 
+}
+
+#country-info-wrapper .country-header { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 1rem; 
+    padding-bottom: 1rem; 
+    border-bottom: 1px solid #e5e7eb; 
+    margin-bottom: 2rem;
+    text-align: left;
+}
+@media (min-width: 768px) { #country-info-wrapper .country-header { flex-direction: row; } }
+#country-info-wrapper .country-details { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 1.5rem; width: 100%; }
+#country-info-wrapper .country-details h2 { grid-column: 1 / -1; margin-bottom: 0.5rem; text-align: left; font-size: 1.75rem; font-weight: 600;}
+#country-info-wrapper .country-details div { font-size: 0.875rem; }
+
+/* --- Medication Lists & Pricing --- */
+.medication-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem; 
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 500;
+}
+
+#medication-list .medication-item {
+ padding: 0.5rem 0 !important;
+}
+
+.medication-item:last-child {
+    border-bottom: none;
+}
+
+/* Container for Name/Ailment/Quantity */
+.medication-item > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* --- Individual Meds Selection Cards Padding --- */
+#individual-meds-list .medication-card {
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    padding-left: 0.35rem;
+    padding-right: 0.35rem;
+}
+
+/* Ensure the selected state maintains the generous vertical padding */
+#individual-meds-list .medication-card.selected {
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+}
+
+/* Drug Name + Ailment */
+.med-name-ailment {
+    font-weight: 500; 
+    color: #6b7280;
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+}
+
+/* Quantity Subtext */
+.med-details {
+    display: block;
+    font-size: 1rem;
+    color: #6b7280; 
+    font-weight: 400; 
+    margin-top: 0.30rem; 
+    margin-bottom: 0.30rem;
+    line-height: 1.2;
+}
+
+.price-comparison {
+    margin-top: 2rem;
+    padding-top: 3rem; 
+    padding-bottom: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: #e2e8f0;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+/* FORCE LINE HEIGHT FOR BETTER VERTICAL SEPARATION (Kit Summary) */
+#price-summary-column .price-comparison {
+    line-height: 1.2;
+}
+
+/* --- Price Comparison Item Spacing (Page 4 Summary Box) --- */
+#price-summary .comparison-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 2rem !important; 
+}
+
+/* Force removal of the .mt-3 margin on the first line item */
+#price-summary .comparison-item.mt-3 {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+}
+
+/* Add the distinct separation line and extra space above "You save" */
+#price-summary .comparison-item:nth-child(4) {
+    padding-top: 1.5rem !important; 
+    border-top: 1px solid #d1d5db; 
+}
+
+/* Ensure the final "Comprehensive Kit Price" is flush with the bottom */
+#price-summary .comparison-item:last-child {
+    padding-bottom: 0 !important; 
+}
+
+/* Ensure the main title is centered above the list */
+.price-comparison .sub-title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    color: #6b7280;
+}
+.discount-price {
+    font-size: 1.5rem;
+    color: #3876d2;
+    font-weight: 400;
+}
+/* --- Change Country Link Styling --- */
+.change-country-link {
+    display: block; 
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6b7280; 
+    margin-top: 1rem; 
+    padding-top: 2rem; 
+    padding-bottom: 1.25rem;
+    text-decoration: underline; 
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.change-country-link:hover {
+    color: #3876d2; 
+}
+
+/* --- Buttons --- */
+.pill-button {
+    border-radius: 9999px;
+    padding: 0.75rem 1.5rem !important;
+}
+.error-border {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2) !important;
+}
+
+/* --- Quiz Navigation Buttons --- */
+.page-buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+}
+
+.page-buttons.last-page {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Last Page Button Sizing */
+#individual-meds-button {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    color: #4b5563;
+    background-color: #e5e7eb;
+    border: 1px solid #d1d5db;
+    font-weight: 500;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    height: 48px;
+}
+#individual-meds-button:hover {
+    background-color: #d1d5db;
+}
+#order-kit-button {
+    width: 100%;
+    margin-top: 1rem;
+    height: 48px;
+}
+
+/* --- Choice Pills (Malaria, Altitude, Allergy, Individual Meds) --- */
+
+.malaria-question-container, .altitude-question-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+/* Grid for Allergy Options (Defaults to 1 column, 3 columns on desktop) */
+.allergy-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1rem; 
+}
+@media (min-width: 768px) {
+    .allergy-grid {
+        /* 3 columns on larger screens */
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+/* Full-width button style for "No known allergies" */
+.full-width-pill {
+    display: block;
+    width: 100%;
+}
+
+.medication-card, 
+#page-2b .malaria-option, 
+#page-3 .altitude-option, 
+.allergy-option {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem; 
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-color: #f9fafb;
+    text-align: left; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    color: #111827; 
+    
+}
+
+.medication-card > div {
+    text-align: left; 
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Force UNSELECTED Price Text is NAVY */
+#individual-meds-selection .medication-card:not(.selected) span:last-child {
+    color: #384b80; 
+    
+}
+
+#individual-meds-selection .medication-card h6,
+#individual-meds-selection .medication-card .med-details {
+    color: #384b80; 
+}
+
+/* Centering for single-text choice pills (Malaria & Altitude) */
+#page-2b .malaria-option, 
+#page-3 .altitude-option {
+    justify-content: center !important; 
+    text-align: center !important; 
+}
+
+/* Override the padding ONLY for the Allergy Pills */
+#page-3b .allergy-option {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border: 1px solid #e5e7eb;
+    line-height: normal; 
+}
+
+.allergy-option {
+    text-align: center; 
+    justify-content: center;
+}
+
+.medication-card:hover {
+    border-color: #3876d2;
+    background-color: #f2f5f9;
+}
+
+.medication-card.selected, 
+#page-2b .malaria-option.selected, 
+#page-3 .altitude-option.selected, 
+.allergy-option.selected {
+    border-color: #3876d2;
+    background-color: #3876d2;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: #ffffff;
+}
+
+/* Force ALL text inside a SELECTED card to white */
+.medication-card.selected h6, 
+.medication-card.selected span, 
+.medication-card.selected .med-details,
+.medication-card.selected span:last-child {
+    color: #ffffff !important;
+}
+
+.individual-med-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Progress Bar (Hidden) --- */
+.progress-container {
+    display: none !important; 
+}
+
+/* --- Individual Med Section (Increased Width and Center) --- */
+#individual-meds-selection h2, #individual-meds-selection p {
+    text-align: center;
+}
+#individual-meds-selection .individual-med-grid,
+#individual-meds-selection .price-comparison,
+#individual-meds-selection .page-buttons {
+    text-align: left;
+    max-width: min(975px, 98%); 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Hide titles for refactoring */
+.travel-prep-title {
+    display: none !important;
+}
